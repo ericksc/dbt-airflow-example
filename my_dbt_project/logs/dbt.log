@@ -1,0 +1,582 @@
+[0m17:54:46.833120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d35ee0e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d363c32f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d364a95b0>]}
+
+
+============================== 17:54:46.837155 | e19093f4-d213-4fd8-baed-6d03c7dda607 ==============================
+[0m17:54:46.837155 [info ] [MainThread]: Running with dbt=1.10.9
+[0m17:54:46.838373 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'log_format': 'default', 'fail_fast': 'False', 'static_parser': 'True', 'warn_error': 'None', 'introspect': 'True', 'invocation_command': 'dbt debug', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'log_path': '/workspaces/dbt_poc/my_dbt_project/logs', 'empty': 'None', 'no_print': 'None', 'cache_selected_only': 'False', 'partial_parse': 'True', 'debug': 'False', 'quiet': 'False', 'profiles_dir': '/root/.dbt', 'use_colors': 'True', 'version_check': 'True', 'printer_width': '80'}
+[0m17:54:46.849267 [info ] [MainThread]: dbt version: 1.10.9
+[0m17:54:46.850245 [info ] [MainThread]: python version: 3.12.11
+[0m17:54:46.851199 [info ] [MainThread]: python path: /opt/venv/bin/python
+[0m17:54:46.852344 [info ] [MainThread]: os info: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.41
+[0m17:54:49.002553 [info ] [MainThread]: Using profiles dir at /root/.dbt
+[0m17:54:49.003557 [info ] [MainThread]: Using profiles.yml file at /root/.dbt/profiles.yml
+[0m17:54:49.004621 [info ] [MainThread]: Using dbt_project.yml file at /workspaces/dbt_poc/my_dbt_project/dbt_project.yml
+[0m17:54:49.005532 [info ] [MainThread]: adapter type: bigquery
+[0m17:54:49.006390 [info ] [MainThread]: adapter version: 1.10.1
+[0m17:54:49.121090 [info ] [MainThread]: Configuration:
+[0m17:54:49.122170 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:54:49.122987 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:54:49.123781 [info ] [MainThread]: Required dependencies:
+[0m17:54:49.124696 [debug] [MainThread]: Executing "git --help"
+[0m17:54:49.126848 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:54:49.127928 [debug] [MainThread]: STDERR: "b''"
+[0m17:54:49.128887 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:54:49.129544 [info ] [MainThread]: Connection:
+[0m17:54:49.130229 [info ] [MainThread]:   method: service-account
+[0m17:54:49.131025 [info ] [MainThread]:   database: dbt-poc-469617
+[0m17:54:49.131821 [info ] [MainThread]:   execution_project: dbt-poc-469617
+[0m17:54:49.132951 [info ] [MainThread]:   schema: analytics
+[0m17:54:49.133853 [info ] [MainThread]:   location: US
+[0m17:54:49.134779 [info ] [MainThread]:   priority: interactive
+[0m17:54:49.136214 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m17:54:49.137482 [info ] [MainThread]:   impersonate_service_account: None
+[0m17:54:49.138740 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m17:54:49.140263 [info ] [MainThread]:   job_retries: 1
+[0m17:54:49.141137 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m17:54:49.141948 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m17:54:49.142892 [info ] [MainThread]:   timeout_seconds: 300
+[0m17:54:49.143752 [info ] [MainThread]:   client_id: None
+[0m17:54:49.144646 [info ] [MainThread]:   token_uri: None
+[0m17:54:49.145371 [info ] [MainThread]:   compute_region: None
+[0m17:54:49.146204 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m17:54:49.147038 [info ] [MainThread]:   gcs_bucket: None
+[0m17:54:49.147896 [info ] [MainThread]:   dataproc_batch: None
+[0m17:54:49.148938 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m17:54:49.279155 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m17:54:49.280441 [debug] [MainThread]: On debug: select 1 as id
+[0m17:54:49.281358 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:54:50.519802 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:272542f4-37ce-4678-9b6a-614a0bcc4923&page=queryresults
+[0m17:54:51.115409 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:54:51.116434 [info ] [MainThread]: [32mAll checks passed![0m
+[0m17:54:51.118773 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 4.36659, "process_in_blocks": "0", "process_kernel_time": 0.472595, "process_mem_max_rss": "381484", "process_out_blocks": "32", "process_user_time": 4.45446}
+[0m17:54:51.119891 [debug] [MainThread]: Command `dbt debug` succeeded at 17:54:51.119770 after 4.37 seconds
+[0m17:54:51.120504 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:54:51.121337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d36e1e960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d02606fc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d3628b410>]}
+[0m17:54:51.122283 [debug] [MainThread]: Flushing usage events
+[0m17:54:51.564001 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:04:55.546860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0573204080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0573dc8c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0573dc9e20>]}
+
+
+============================== 18:04:55.553545 | e1f001f4-d0e9-4533-aac6-61f9c781a1b8 ==============================
+[0m18:04:55.553545 [info ] [MainThread]: Running with dbt=1.10.9
+[0m18:04:55.556620 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'log_format': 'default', 'printer_width': '80', 'empty': 'None', 'use_colors': 'True', 'partial_parse': 'True', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'introspect': 'True', 'write_json': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'quiet': 'False', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'target_path': 'None', 'profiles_dir': '/root/.dbt', 'log_path': '/workspaces/dbt_poc/my_dbt_project/logs'}
+[0m18:04:55.582041 [info ] [MainThread]: dbt version: 1.10.9
+[0m18:04:55.587999 [info ] [MainThread]: python version: 3.12.11
+[0m18:04:55.589725 [info ] [MainThread]: python path: /opt/venv/bin/python
+[0m18:04:55.591063 [info ] [MainThread]: os info: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.41
+[0m18:04:57.859663 [info ] [MainThread]: Using profiles dir at /root/.dbt
+[0m18:04:57.861095 [info ] [MainThread]: Using profiles.yml file at /root/.dbt/profiles.yml
+[0m18:04:57.862360 [info ] [MainThread]: Using dbt_project.yml file at /workspaces/dbt_poc/my_dbt_project/dbt_project.yml
+[0m18:04:57.863350 [info ] [MainThread]: adapter type: bigquery
+[0m18:04:57.865028 [info ] [MainThread]: adapter version: 1.10.1
+[0m18:04:57.986027 [info ] [MainThread]: Configuration:
+[0m18:04:57.987411 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:04:57.988528 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:04:57.989520 [info ] [MainThread]: Required dependencies:
+[0m18:04:57.990606 [debug] [MainThread]: Executing "git --help"
+[0m18:04:57.993995 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:04:57.995416 [debug] [MainThread]: STDERR: "b''"
+[0m18:04:57.996389 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:04:57.997534 [info ] [MainThread]: Connection:
+[0m18:04:57.998692 [info ] [MainThread]:   method: service-account
+[0m18:04:57.999582 [info ] [MainThread]:   database: dbt-poc-469617
+[0m18:04:58.000809 [info ] [MainThread]:   execution_project: dbt-poc-469617
+[0m18:04:58.001884 [info ] [MainThread]:   schema: analytics
+[0m18:04:58.002827 [info ] [MainThread]:   location: US
+[0m18:04:58.003824 [info ] [MainThread]:   priority: interactive
+[0m18:04:58.005374 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m18:04:58.007948 [info ] [MainThread]:   impersonate_service_account: None
+[0m18:04:58.009793 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m18:04:58.010897 [info ] [MainThread]:   job_retries: 1
+[0m18:04:58.012642 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m18:04:58.015113 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m18:04:58.017463 [info ] [MainThread]:   timeout_seconds: 300
+[0m18:04:58.019466 [info ] [MainThread]:   client_id: None
+[0m18:04:58.021480 [info ] [MainThread]:   token_uri: None
+[0m18:04:58.024898 [info ] [MainThread]:   compute_region: None
+[0m18:04:58.027591 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m18:04:58.030889 [info ] [MainThread]:   gcs_bucket: None
+[0m18:04:58.033467 [info ] [MainThread]:   dataproc_batch: None
+[0m18:04:58.035424 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m18:04:58.176549 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m18:04:58.177720 [debug] [MainThread]: On debug: select 1 as id
+[0m18:04:58.178859 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:04:59.190084 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:bf730220-05cc-4c0b-8927-9eaaa38ec671&page=queryresults
+[0m18:04:59.843879 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:04:59.845538 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:04:59.850362 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 4.3905673, "process_in_blocks": "0", "process_kernel_time": 0.419911, "process_mem_max_rss": "381628", "process_out_blocks": "0", "process_user_time": 5.024539}
+[0m18:04:59.852175 [debug] [MainThread]: Command `dbt debug` succeeded at 18:04:59.851933 after 4.39 seconds
+[0m18:04:59.853418 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:04:59.855533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f05733c1b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f053f6286b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0572a19100>]}
+[0m18:04:59.857276 [debug] [MainThread]: Flushing usage events
+[0m18:05:00.270365 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:05:11.218136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa4ea9c230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa4c9a1ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa4c5dcbf0>]}
+
+
+============================== 18:05:11.222333 | 651c0e9e-d460-4cf6-95f4-71af7cd3c3ae ==============================
+[0m18:05:11.222333 [info ] [MainThread]: Running with dbt=1.10.9
+[0m18:05:11.223893 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'version_check': 'True', 'profiles_dir': '/root/.dbt', 'indirect_selection': 'eager', 'log_path': '/workspaces/dbt_poc/my_dbt_project/logs', 'no_print': 'None', 'log_format': 'default', 'quiet': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'empty': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'target_path': 'None', 'write_json': 'True'}
+[0m18:05:13.475580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa18ef5370>]}
+[0m18:05:13.532524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa4e878950>]}
+[0m18:05:13.534146 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m18:05:13.677217 [debug] [MainThread]: checksum: 6543b8b248ceda473ef0d611849d5d909085b6b714afa9b515e9635faea7af23, vars: {}, profile: , target: , version: 1.10.9
+[0m18:05:13.683188 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:05:13.686782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa4cb0e5a0>]}
+[0m18:05:15.454167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa1919d880>]}
+[0m18:05:15.719398 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/dbt_poc/my_dbt_project/target/manifest.json
+[0m18:05:15.749833 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/dbt_poc/my_dbt_project/target/semantic_manifest.json
+[0m18:05:15.826880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa12f3b560>]}
+[0m18:05:15.830439 [info ] [MainThread]: Found 2 models, 5 data tests, 1 source, 496 macros
+[0m18:05:15.833630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa12f9a870>]}
+[0m18:05:15.844451 [info ] [MainThread]: 
+[0m18:05:15.848544 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:05:15.851975 [info ] [MainThread]: 
+[0m18:05:15.857055 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:05:15.890297 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dbt-poc-469617'
+[0m18:05:15.892970 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:05:16.807813 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt-poc-469617, now list_dbt-poc-469617_analytics)
+[0m18:05:16.809970 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:05:17.713645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa18887500>]}
+[0m18:05:17.720168 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:05:17.754546 [debug] [Thread-1 (]: Began running node model.my_dbt_project.stg_sales
+[0m18:05:17.757669 [info ] [Thread-1 (]: 1 of 2 START sql view model analytics.stg_sales ................................ [RUN]
+[0m18:05:17.761182 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt-poc-469617_analytics, now model.my_dbt_project.stg_sales)
+[0m18:05:17.763644 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.stg_sales
+[0m18:05:17.806753 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.stg_sales"
+[0m18:05:17.894857 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.stg_sales
+[0m18:05:17.953650 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.stg_sales"
+[0m18:05:18.000031 [debug] [Thread-1 (]: On model.my_dbt_project.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.stg_sales"} */
+
+
+  create or replace view `dbt-poc-469617`.`analytics`.`stg_sales`
+  OPTIONS()
+  as 
+
+SELECT
+    order_id,
+    customer_id,
+    product_id,
+    amount,
+    order_date
+FROM `dbt-poc-469617`.`raw`.`sales`;
+
+
+[0m18:05:18.001835 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:19.410776 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:17864046-0ba5-41f9-a126-db3943815838&page=queryresults
+[0m18:05:20.052569 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa1bc6aed0>]}
+[0m18:05:20.054375 [info ] [Thread-1 (]: 1 of 2 OK created sql view model analytics.stg_sales ........................... [[32mCREATE VIEW (0 processed)[0m in 2.29s]
+[0m18:05:20.056131 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.stg_sales
+[0m18:05:20.058913 [debug] [Thread-1 (]: Began running node model.my_dbt_project.int_sales_summary
+[0m18:05:20.060436 [info ] [Thread-1 (]: 2 of 2 START sql table model analytics.int_sales_summary ....................... [RUN]
+[0m18:05:20.061684 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.stg_sales, now model.my_dbt_project.int_sales_summary)
+[0m18:05:20.063107 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.int_sales_summary
+[0m18:05:20.069587 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.int_sales_summary"
+[0m18:05:20.095127 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.int_sales_summary
+[0m18:05:20.139748 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.int_sales_summary"
+[0m18:05:20.159150 [debug] [Thread-1 (]: On model.my_dbt_project.int_sales_summary: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.int_sales_summary"} */
+
+  
+    
+
+    create or replace table `dbt-poc-469617`.`analytics`.`int_sales_summary`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+SELECT
+    customer_id,
+    COUNT(order_id) AS num_orders,
+    SUM(amount) AS total_amount,
+    MIN(order_date) AS first_order,
+    MAX(order_date) AS last_order
+FROM `dbt-poc-469617`.`analytics`.`stg_sales`
+GROUP BY customer_id
+    );
+  
+[0m18:05:20.160367 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:21.337596 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:54025a5e-b21e-4508-85ec-4c1b402b550c&page=queryresults
+[0m18:05:23.768212 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '651c0e9e-d460-4cf6-95f4-71af7cd3c3ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa10b77ef0>]}
+[0m18:05:23.770711 [info ] [Thread-1 (]: 2 of 2 OK created sql table model analytics.int_sales_summary .................. [[32mCREATE TABLE (390.0 rows, 34.2 KiB processed)[0m in 3.71s]
+[0m18:05:23.773397 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.int_sales_summary
+[0m18:05:23.778972 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:05:23.794909 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:05:23.797449 [debug] [MainThread]: Connection 'model.my_dbt_project.int_sales_summary' was properly closed.
+[0m18:05:23.799553 [info ] [MainThread]: 
+[0m18:05:23.801906 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 7.94 seconds (7.94s).
+[0m18:05:23.814826 [debug] [MainThread]: Command end result
+[0m18:05:23.887167 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/dbt_poc/my_dbt_project/target/manifest.json
+[0m18:05:23.900711 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/dbt_poc/my_dbt_project/target/semantic_manifest.json
+[0m18:05:23.918565 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspaces/dbt_poc/my_dbt_project/target/run_results.json
+[0m18:05:23.920321 [info ] [MainThread]: 
+[0m18:05:23.922251 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:05:23.923764 [info ] [MainThread]: 
+[0m18:05:23.925153 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m18:05:23.927062 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.796729, "process_in_blocks": "0", "process_kernel_time": 0.626343, "process_mem_max_rss": "398156", "process_out_blocks": "112", "process_user_time": 6.879833}
+[0m18:05:23.928449 [debug] [MainThread]: Command `dbt run` succeeded at 18:05:23.928200 after 12.80 seconds
+[0m18:05:23.929712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa4d08aa80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa12f42c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa1819cd40>]}
+[0m18:05:23.937459 [debug] [MainThread]: Flushing usage events
+[0m18:05:24.347219 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:05:35.333320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f974a52dd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f974a7834d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f974a33be60>]}
+
+
+============================== 18:05:35.337231 | 6b2670de-3e24-4995-aed4-6f9d4860bbbd ==============================
+[0m18:05:35.337231 [info ] [MainThread]: Running with dbt=1.10.9
+[0m18:05:35.338285 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'introspect': 'True', 'no_print': 'None', 'printer_width': '80', 'use_experimental_parser': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'log_format': 'default', 'log_cache_events': 'False', 'log_path': '/workspaces/dbt_poc/my_dbt_project/logs', 'write_json': 'True', 'invocation_command': 'dbt test', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'None', 'target_path': 'None', 'partial_parse': 'True', 'fail_fast': 'False', 'profiles_dir': '/root/.dbt', 'use_colors': 'True'}
+[0m18:05:37.409880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6b2670de-3e24-4995-aed4-6f9d4860bbbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9716650950>]}
+[0m18:05:37.468791 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6b2670de-3e24-4995-aed4-6f9d4860bbbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9719cf82f0>]}
+[0m18:05:37.470226 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m18:05:37.607929 [debug] [MainThread]: checksum: 6543b8b248ceda473ef0d611849d5d909085b6b714afa9b515e9635faea7af23, vars: {}, profile: , target: , version: 1.10.9
+[0m18:05:38.037643 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:05:38.038800 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:05:38.082131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6b2670de-3e24-4995-aed4-6f9d4860bbbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f97162ca660>]}
+[0m18:05:38.341171 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/dbt_poc/my_dbt_project/target/manifest.json
+[0m18:05:38.354530 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/dbt_poc/my_dbt_project/target/semantic_manifest.json
+[0m18:05:38.396133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6b2670de-3e24-4995-aed4-6f9d4860bbbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f97496ca720>]}
+[0m18:05:38.397547 [info ] [MainThread]: Found 2 models, 5 data tests, 1 source, 496 macros
+[0m18:05:38.398594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6b2670de-3e24-4995-aed4-6f9d4860bbbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9716412d50>]}
+[0m18:05:38.401520 [info ] [MainThread]: 
+[0m18:05:38.404318 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:05:38.408487 [info ] [MainThread]: 
+[0m18:05:38.415093 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:05:38.428311 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dbt-poc-469617_analytics'
+[0m18:05:38.432280 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:05:39.406010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6b2670de-3e24-4995-aed4-6f9d4860bbbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9716523dd0>]}
+[0m18:05:39.408166 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:05:39.436245 [debug] [Thread-1 (]: Began running node test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc
+[0m18:05:39.437549 [info ] [Thread-1 (]: 1 of 5 START test not_null_int_sales_summary_customer_id ....................... [RUN]
+[0m18:05:39.438765 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt-poc-469617_analytics, now test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc)
+[0m18:05:39.439850 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc
+[0m18:05:39.465418 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc"
+[0m18:05:39.487384 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc
+[0m18:05:39.512290 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc"
+[0m18:05:39.535875 [debug] [Thread-1 (]: On test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from `dbt-poc-469617`.`analytics`.`int_sales_summary`
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:05:39.537314 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:40.926455 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:989aacc0-09f5-45d5-9125-c3e5a63c02c1&page=queryresults
+[0m18:05:41.787739 [info ] [Thread-1 (]: 1 of 5 PASS not_null_int_sales_summary_customer_id ............................. [[32mPASS[0m in 2.35s]
+[0m18:05:41.789518 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc
+[0m18:05:41.790260 [debug] [Thread-1 (]: Began running node test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793
+[0m18:05:41.791063 [info ] [Thread-1 (]: 2 of 5 START test not_null_stg_sales_customer_id ............................... [RUN]
+[0m18:05:41.792492 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.my_dbt_project.not_null_int_sales_summary_customer_id.a3e8cfbcdc, now test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793)
+[0m18:05:41.796112 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793
+[0m18:05:41.802428 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793"
+[0m18:05:41.819756 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793
+[0m18:05:41.823230 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793"
+[0m18:05:41.843490 [debug] [Thread-1 (]: On test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from `dbt-poc-469617`.`analytics`.`stg_sales`
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:05:41.845872 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:43.229862 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:1d7c86cf-78ea-439d-a9d9-ded7c520c85f&page=queryresults
+[0m18:05:44.048331 [info ] [Thread-1 (]: 2 of 5 PASS not_null_stg_sales_customer_id ..................................... [[32mPASS[0m in 2.25s]
+[0m18:05:44.050768 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793
+[0m18:05:44.053316 [debug] [Thread-1 (]: Began running node test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b
+[0m18:05:44.055329 [info ] [Thread-1 (]: 3 of 5 START test not_null_stg_sales_order_id .................................. [RUN]
+[0m18:05:44.057266 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.my_dbt_project.not_null_stg_sales_customer_id.af88ce3793, now test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b)
+[0m18:05:44.058768 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b
+[0m18:05:44.067114 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b"
+[0m18:05:44.095557 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b
+[0m18:05:44.100033 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b"
+[0m18:05:44.118268 [debug] [Thread-1 (]: On test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from `dbt-poc-469617`.`analytics`.`stg_sales`
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:05:44.119316 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:45.468036 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:c8884a76-e972-49fa-83f1-92ba1bfcc17b&page=queryresults
+[0m18:05:46.237861 [info ] [Thread-1 (]: 3 of 5 PASS not_null_stg_sales_order_id ........................................ [[32mPASS[0m in 2.18s]
+[0m18:05:46.240645 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b
+[0m18:05:46.242516 [debug] [Thread-1 (]: Began running node test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664
+[0m18:05:46.244030 [info ] [Thread-1 (]: 4 of 5 START test unique_int_sales_summary_customer_id ......................... [RUN]
+[0m18:05:46.245424 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.my_dbt_project.not_null_stg_sales_order_id.5d52c19c3b, now test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664)
+[0m18:05:46.254127 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664
+[0m18:05:46.267445 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664"
+[0m18:05:46.282904 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664
+[0m18:05:46.286532 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664"
+[0m18:05:46.301460 [debug] [Thread-1 (]: On test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select customer_id as unique_field
+  from `dbt-poc-469617`.`analytics`.`int_sales_summary`
+  where customer_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:05:46.302550 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:47.604614 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:4b7b9f18-a594-4587-8a1b-c11bfd7660a7&page=queryresults
+[0m18:05:48.493444 [info ] [Thread-1 (]: 4 of 5 PASS unique_int_sales_summary_customer_id ............................... [[32mPASS[0m in 2.25s]
+[0m18:05:48.494945 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664
+[0m18:05:48.495701 [debug] [Thread-1 (]: Began running node test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee
+[0m18:05:48.496468 [info ] [Thread-1 (]: 5 of 5 START test unique_stg_sales_order_id .................................... [RUN]
+[0m18:05:48.498486 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.my_dbt_project.unique_int_sales_summary_customer_id.39d7192664, now test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee)
+[0m18:05:48.499721 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee
+[0m18:05:48.508878 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee"
+[0m18:05:48.531778 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee
+[0m18:05:48.538190 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee"
+[0m18:05:48.555453 [debug] [Thread-1 (]: On test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select order_id as unique_field
+  from `dbt-poc-469617`.`analytics`.`stg_sales`
+  where order_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:05:48.556680 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:05:49.975388 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:0f56da34-170f-4359-8593-639be9ed2836&page=queryresults
+[0m18:05:50.856737 [info ] [Thread-1 (]: 5 of 5 PASS unique_stg_sales_order_id .......................................... [[32mPASS[0m in 2.36s]
+[0m18:05:50.858800 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee
+[0m18:05:50.862004 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:05:50.868508 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:05:50.869738 [debug] [MainThread]: Connection 'test.my_dbt_project.unique_stg_sales_order_id.3cdf3825ee' was properly closed.
+[0m18:05:50.871102 [info ] [MainThread]: 
+[0m18:05:50.871910 [info ] [MainThread]: Finished running 5 data tests in 0 hours 0 minutes and 12.46 seconds (12.46s).
+[0m18:05:50.875326 [debug] [MainThread]: Command end result
+[0m18:05:50.937925 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/dbt_poc/my_dbt_project/target/manifest.json
+[0m18:05:50.949925 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/dbt_poc/my_dbt_project/target/semantic_manifest.json
+[0m18:05:50.968507 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspaces/dbt_poc/my_dbt_project/target/run_results.json
+[0m18:05:50.969690 [info ] [MainThread]: 
+[0m18:05:50.970729 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:05:50.971726 [info ] [MainThread]: 
+[0m18:05:50.972799 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m18:05:50.974701 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 15.713774, "process_in_blocks": "0", "process_kernel_time": 0.438053, "process_mem_max_rss": "391140", "process_out_blocks": "0", "process_user_time": 5.566622}
+[0m18:05:50.975830 [debug] [MainThread]: Command `dbt test` succeeded at 18:05:50.975689 after 15.72 seconds
+[0m18:05:50.976866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9749f722a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9714418050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9714418c20>]}
+[0m18:05:50.978866 [debug] [MainThread]: Flushing usage events
+[0m18:05:51.537153 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:11:04.524062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1836af47a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f18391ac170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f183744fda0>]}
+
+
+============================== 18:11:04.528262 | 9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6 ==============================
+[0m18:11:04.528262 [info ] [MainThread]: Running with dbt=1.10.9
+[0m18:11:04.529720 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'no_print': 'None', 'introspect': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'static_parser': 'True', 'debug': 'False', 'quiet': 'False', 'partial_parse': 'True', 'log_path': '/workspaces/dbt_poc/my_dbt_project/logs', 'profiles_dir': '/root/.dbt', 'use_experimental_parser': 'False', 'write_json': 'True', 'fail_fast': 'False'}
+[0m18:11:06.882886 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f18035b61b0>]}
+[0m18:11:06.951619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1803ccbfb0>]}
+[0m18:11:06.953134 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m18:11:07.098109 [debug] [MainThread]: checksum: 6543b8b248ceda473ef0d611849d5d909085b6b714afa9b515e9635faea7af23, vars: {}, profile: , target: , version: 1.10.9
+[0m18:11:07.815185 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:11:07.816427 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:11:07.862442 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f180312f020>]}
+[0m18:11:08.183683 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/dbt_poc/my_dbt_project/target/manifest.json
+[0m18:11:08.198598 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/dbt_poc/my_dbt_project/target/semantic_manifest.json
+[0m18:11:08.236243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f18032cf170>]}
+[0m18:11:08.238748 [info ] [MainThread]: Found 2 models, 5 data tests, 1 source, 496 macros
+[0m18:11:08.239902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1802e83b30>]}
+[0m18:11:08.242611 [info ] [MainThread]: 
+[0m18:11:08.243547 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:11:08.244432 [info ] [MainThread]: 
+[0m18:11:08.246006 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:11:08.258363 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dbt-poc-469617'
+[0m18:11:08.259803 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:11:09.314469 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt-poc-469617, now list_dbt-poc-469617_analytics)
+[0m18:11:09.317289 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:11:10.258641 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1802f62a50>]}
+[0m18:11:10.261651 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:11:10.290058 [debug] [Thread-1 (]: Began running node model.my_dbt_project.stg_sales
+[0m18:11:10.293590 [info ] [Thread-1 (]: 1 of 2 START sql view model analytics.stg_sales ................................ [RUN]
+[0m18:11:10.297857 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt-poc-469617_analytics, now model.my_dbt_project.stg_sales)
+[0m18:11:10.300382 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.stg_sales
+[0m18:11:10.350633 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.stg_sales"
+[0m18:11:10.389351 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.stg_sales
+[0m18:11:10.447104 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.stg_sales"
+[0m18:11:10.467878 [debug] [Thread-1 (]: On model.my_dbt_project.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.stg_sales"} */
+
+
+  create or replace view `dbt-poc-469617`.`analytics`.`stg_sales`
+  OPTIONS()
+  as 
+
+SELECT
+    order_id,
+    customer_id,
+    product_id,
+    amount,
+    order_date
+FROM `dbt-poc-469617`.`raw`.`sales`;
+
+
+[0m18:11:10.469578 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:11:11.697740 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:430e0751-d838-4884-a23f-a42d022f1c9a&page=queryresults
+[0m18:11:12.417533 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f180601ef30>]}
+[0m18:11:12.419106 [info ] [Thread-1 (]: 1 of 2 OK created sql view model analytics.stg_sales ........................... [[32mCREATE VIEW (0 processed)[0m in 2.12s]
+[0m18:11:12.420277 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.stg_sales
+[0m18:11:12.421889 [debug] [Thread-1 (]: Began running node model.my_dbt_project.int_sales_summary
+[0m18:11:12.422889 [info ] [Thread-1 (]: 2 of 2 START sql table model analytics.int_sales_summary ....................... [RUN]
+[0m18:11:12.423716 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.stg_sales, now model.my_dbt_project.int_sales_summary)
+[0m18:11:12.424438 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.int_sales_summary
+[0m18:11:12.431078 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.int_sales_summary"
+[0m18:11:12.446284 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.int_sales_summary
+[0m18:11:12.458147 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:11:13.308479 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.int_sales_summary"
+[0m18:11:13.331734 [debug] [Thread-1 (]: On model.my_dbt_project.int_sales_summary: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.int_sales_summary"} */
+
+  
+    
+
+    create or replace table `dbt-poc-469617`.`analytics`.`int_sales_summary`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+SELECT
+    customer_id,
+    COUNT(order_id) AS num_orders,
+    SUM(amount) AS total_amount,
+    MIN(order_date) AS first_order,
+    MAX(order_date) AS last_order
+FROM `dbt-poc-469617`.`analytics`.`stg_sales`
+GROUP BY customer_id
+    );
+  
+[0m18:11:13.981554 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dbt-poc-469617&j=bq:US:c14f0ed8-e093-4ea7-be8d-d4bc504e3dc1&page=queryresults
+[0m18:11:16.712239 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9d896bb0-cf23-435f-a4f1-0e2ca8a0f0d6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1803386630>]}
+[0m18:11:16.714068 [info ] [Thread-1 (]: 2 of 2 OK created sql table model analytics.int_sales_summary .................. [[32mCREATE TABLE (390.0 rows, 34.2 KiB processed)[0m in 4.29s]
+[0m18:11:16.715309 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.int_sales_summary
+[0m18:11:16.718034 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:11:16.727251 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:11:16.728313 [debug] [MainThread]: Connection 'model.my_dbt_project.int_sales_summary' was properly closed.
+[0m18:11:16.729114 [info ] [MainThread]: 
+[0m18:11:16.730274 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 8.48 seconds (8.48s).
+[0m18:11:16.733149 [debug] [MainThread]: Command end result
+[0m18:11:16.807481 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/dbt_poc/my_dbt_project/target/manifest.json
+[0m18:11:16.816684 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/dbt_poc/my_dbt_project/target/semantic_manifest.json
+[0m18:11:16.835521 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspaces/dbt_poc/my_dbt_project/target/run_results.json
+[0m18:11:16.837937 [info ] [MainThread]: 
+[0m18:11:16.840209 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:11:16.841422 [info ] [MainThread]: 
+[0m18:11:16.842751 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m18:11:16.845219 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.418346, "process_in_blocks": "0", "process_kernel_time": 0.629969, "process_mem_max_rss": "389216", "process_out_blocks": "0", "process_user_time": 5.718717}
+[0m18:11:16.846597 [debug] [MainThread]: Command `dbt run` succeeded at 18:11:16.846389 after 12.42 seconds
+[0m18:11:16.854332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1802e6a9c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1800b0ee70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1800b0ecc0>]}
+[0m18:11:16.858326 [debug] [MainThread]: Flushing usage events
+[0m18:11:17.385316 [debug] [MainThread]: An error was encountered while trying to flush usage events

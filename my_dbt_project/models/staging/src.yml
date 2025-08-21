@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: dbt-poc-469617       # your GCP project
+    schema: raw                # dataset with source tables
+    tables:
+      - name: sales
+        description: "Raw sales transactions table"
