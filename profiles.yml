@@ -4,7 +4,7 @@ my_dbt_project:
       dataset: analytics
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: /root/.config/gcloud/dbt-service-key.json
+      keyfile_json: "{{ env_var('DBT_GOOGLE_KEYFILE_JSON') }}"
       location: US
       method: service-account
       priority: interactive
